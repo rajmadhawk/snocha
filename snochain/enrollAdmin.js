@@ -1,13 +1,4 @@
 'use strict';
-/*
-* Copyright IBM Corp All Rights Reserved
-*
-* SPDX-License-Identifier: Apache-2.0
-*/
-/*
- * Enroll the admin user
- */
-
 var Fabric_Client = require('fabric-client');
 var Fabric_CA_Client = require('fabric-ca-client');
 
@@ -39,8 +30,7 @@ Fabric_Client.newDefaultKeyValueStore({ path: store_path
     	verify: false
     };
     // be sure to change the http to https when the CA is running TLS enabled
-    fabric_ca_client = new Fabric_CA_Client('http://192.168.99.100:7054', tlsOptions , 'ca.example.com', crypto_suite);
-    //fabric_ca_client = new Fabric_CA_Client('http://localhost:7054', tlsOptions , 'ca.example.com', crypto_suite);
+   /fabric_ca_client = new Fabric_CA_Client('http://localhost:7054', tlsOptions , 'ca.example.com', crypto_suite);
     // first check to see if the admin is already enrolled
     return fabric_client.getUserContext('admin', true);
 }).then((user_from_store) => {
